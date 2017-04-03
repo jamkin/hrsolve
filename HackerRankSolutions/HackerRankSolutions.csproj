@@ -48,16 +48,18 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GamingArray\GamingArray.cs" />
+    <Compile Include="GamingArray\GamingArray_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunningMedian\RunningMedian.cs" />
     <Compile Include="RunningMedian\RunningMedian_Test.cs" />
-    <Compile Include="Utilities\Heaps\MaxHeap.cs" />
-    <Compile Include="Utilities\Heaps\MinHeap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="RunningMedian\TestCaseInput\TestCase_16_Input.txt" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

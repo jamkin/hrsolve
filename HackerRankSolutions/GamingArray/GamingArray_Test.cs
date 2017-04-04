@@ -2,7 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using System.IO;
-using System.Collections.Generic;
 
 namespace HackerRankSolutions.GamingArray
 {
@@ -13,53 +12,56 @@ namespace HackerRankSolutions.GamingArray
         public void SampleInput_0_Line0()
         {
             int[] board = { 5, 2, 6, 3, 4 };
-            Assert.AreEqual(GamingArray.PlayerTwo, GamingArray.WhoWins(board));
+            Assert.AreEqual("ANDY", GamingArray.WhoWins(board));
         }
 
         [TestMethod]
         public void SampleInput_0_Line1()
         {
             int[] board = { 3, 1 };
-            Assert.AreEqual(GamingArray.PlayerOne, GamingArray.WhoWins(board));
+            Assert.AreEqual("BOB", GamingArray.WhoWins(board));
         }
 
         [TestMethod]
         public void EmptyBoard()
         {
             int[] board = { };
-            Assert.AreEqual(GamingArray.PlayerTwo, GamingArray.WhoWins(board));
+            Assert.AreEqual("ANDY", GamingArray.WhoWins(board));
         }
 
         [TestMethod]
         public void SingleElement()
         {
             int[] board = { 1 };
-            Assert.AreEqual(GamingArray.PlayerOne, GamingArray.WhoWins(board));
+            Assert.AreEqual("BOB", GamingArray.WhoWins(board));
         }
 
         [TestMethod]
         public void TwoOfSameElement()
         {
             int[] board = { 2, 2 };
-            Assert.AreEqual(GamingArray.PlayerOne, GamingArray.WhoWins(board));
+            Assert.AreEqual("BOB", GamingArray.WhoWins(board));
         }
 
         [TestMethod]
         public void TwoElementsSecondLarger()
         {
             int[] board = { 1, 2 };
-            Assert.AreEqual(GamingArray.PlayerTwo, GamingArray.WhoWins(board));
+            Assert.AreEqual("ANDY", GamingArray.WhoWins(board));
         }
 
         [TestMethod]
-        public void GeneralAscendingOrder()
+        public void ThreeAscending()
         {
-            for(int i = 0; i < 10; ++i)
-            {
-                int[] board = Enumerable.Range(0, i).ToArray();
-                string expectedWinner = i % 2 == 1 ? GamingArray.PlayerOne : GamingArray.PlayerTwo;
-                Assert.AreEqual(expectedWinner, GamingArray.WhoWins(board));
-            }
+            int[] board = { 1, 2, 3 };
+            Assert.AreEqual("BOB", GamingArray.WhoWins(board));
+        }
+
+        [TestMethod]
+        public void UpDown()
+        {
+            int[] board = { 1, 3, 2 };
+            Assert.AreEqual("ANDY", GamingArray.WhoWins(board));
         }
 
         [TestMethod]

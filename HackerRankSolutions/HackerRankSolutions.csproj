@@ -54,6 +54,8 @@
     <Compile Include="BirthdayChocolate\BirthdayChocolate_Test.cs" />
     <Compile Include="BreakingTheRecords\BreakingTheRecords.cs" />
     <Compile Include="BreakingTheRecords\BreakingTheRecords_Test.cs" />
+    <Compile Include="CountingValleys\CountingValleys.cs" />
+    <Compile Include="CountingValleys\CountingValleys_Test.cs" />
     <Compile Include="GamingArray\GamingArray.cs" />
     <Compile Include="GamingArray\GamingArray_Test.cs" />
     <Compile Include="MigratoryBirds\MigratoryBirds.cs" />

@@ -2,6 +2,9 @@
 
 namespace HackerRankSolutions.CatsAndMouse
 {
+    /// <summary>
+    /// Provides a solution to the "Cat and a Mouse" problem https://www.hackerrank.com/contests/hourrank-15/challenges/cats-and-a-mouse
+    /// </summary>
     public static class CatsAndMouse
     {
         public static string Catcher(int x, int y, int z)

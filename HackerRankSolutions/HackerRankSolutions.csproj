@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithm.cs" />
     <Compile Include="BirthdayCakeCandles\BirthdayCakeCandles.cs" />
     <Compile Include="BirthdayCakeCandles\BirthdayCakeCandles_Test.cs" />
     <Compile Include="BirthdayChocolate\BirthdayChocolate.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunningMedian\RunningMedian.cs" />
     <Compile Include="RunningMedian\RunningMedian_Test.cs" />
+    <Compile Include="Algorithm_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -100,5 +100,19 @@ namespace HackerRankSolutions
                 }
             }
         }
+
+        public static byte[] GetDigits(this ulong n)
+        {
+            List<byte> digits = new List<byte>();
+            for(; n != 0; n /= 10)
+            {
+                ulong r = n % 10;
+                byte b = Convert.ToByte(r);
+                digits.Add(b);
+            }
+            byte[] arr = digits.ToArray();
+            Array.Reverse(arr);
+            return arr;
+        }
     }
 }

@@ -77,45 +77,36 @@ namespace HackerRankSolutions.NonDivisibleSubset
         /// <param name="arr">Assummed to contain unique elements</param>
         public static int GetMaxSize(int[] arr, int k)
         {
-            IEnumerable<int> remainders = arr.Select(i => i % k);
+            int[] R = new int[k]; // counts of remainders
+            for(int i = 0; i < arr.Length; ++i)
+                ++R[arr[i] % k];
 
-            IEnumerable<int> distinct = remainders.Distinct();
+            var bads = new List<Tuple<int, int>>(); // pairs of remainders that sum to k
 
-            IEnumerable<Tuple<int, int>> pairsSumtoK = remainders.PairsSumToN(k);
+            for(int i = 1, j = k - 1; i <= j; ++i, --j)
+            {
+                if(R[i] > 0 && R[j] > 0)
+                {
+                    bads.Add(Tuple.Create(i, j));
+                }
+            }
 
-            IEnumerable<Tuple<int, int>> pairsSumtoZero = remainders.PairsSumToN(0);
+            // also add zero-valued pairs to the list of bads
+            if(R[0] > 1)
+                bads.Add(Tuple.Create(0, 0));
 
-            IEnumerable<Tuple<int, int>> pairsToRemove = pairsSumtoK.Union(pairsSumtoZero).Distinct(new TupleComparer());
-
-            Dictionary<int, int> frequencies = remainders.GroupBy(r => r).ToDictionary(g => g.Key, g => g.Count());
-
-            int count = remainders.Count();
-            foreach(var pair in pairsToRemove)
+            // Count the number of items left after removing pairs that need removed
+            int count = arr.Length;
+            foreach (var pair in bads)
             {
                 if(pair.Item1 == pair.Item2)
-                    count -= frequencies[pair.Item1] - 1;
-                else if(frequencies[pair.Item1] < frequencies[pair.Item2])
-                    count -= frequencies[pair.Item1];
+                    count -= R[pair.Item1] - 1;
+                else if(R[pair.Item1] < R[pair.Item2])
+                    count -= R[pair.Item1];
                 else
-                    count -= frequencies[pair.Item2];
+                    count -= R[pair.Item2];
             }
             return count;
-        }
-    }
-
-    class TupleComparer : IEqualityComparer<Tuple<int, int>>
-    {
-        public bool Equals(Tuple<int,int> a, Tuple<int, int> b)
-        {
-            return a.Item1 == b.Item1 && a.Item2 == b.Item2
-                || a.Item1 == b.Item2 && a.Item2 == b.Item1;
-        }
-
-        public int GetHashCode(Tuple<int, int> t)
-        {
-            int larger = Math.Max(t.Item1, t.Item2);
-            int smaller = t.Item1 + t.Item2 - larger;
-            return larger + 31 * smaller;
         }
     }
 }

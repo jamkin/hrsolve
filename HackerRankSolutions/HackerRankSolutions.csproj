@@ -69,6 +69,8 @@
     <Compile Include="MagicSquare\MagicSquare_Test.cs" />
     <Compile Include="MigratoryBirds\MigratoryBirds.cs" />
     <Compile Include="MigratoryBirds\MigratoryBirds_Test.cs" />
+    <Compile Include="NonDivisibleSubset\NonDivisibleSubset.cs" />
+    <Compile Include="NonDivisibleSubset\NonDivisibleSubset_Test.cs" />
     <Compile Include="PickingNumbers\PickingNumbers.cs" />
     <Compile Include="PickingNumbers\PickingNumbers_Test.cs" />
     <Compile Include="PowerSum\PowerSum.cs" />

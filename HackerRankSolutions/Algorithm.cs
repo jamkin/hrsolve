@@ -77,27 +77,36 @@ namespace HackerRankSolutions
         /// </summary
         public static IEnumerable<IEnumerable<T>> AllSubcollections<T>(this IEnumerable<T> source)
         {
-            // The empty set is always a subcollection
-            yield return new List<T>() { };
-                     
             T[] arr = source.ToArray();
-            IEnumerable<int> indices = Enumerable.Range(0, arr.Length);
-            var last = new List<HashSet<int>>(new List<HashSet<int>>() { new HashSet<int>() });
-            for(int k = 1; k < arr.Length; ++k)
+            if(arr.Length == 0)
             {
-                var next = new List<HashSet<int>>(new List<HashSet<int>>());
-                foreach(HashSet<int> hs in last)
+                yield return new List<T>() { };
+                yield break;
+            }
+            IEnumerable<IEnumerable<bool>> flagSets = new bool[] { false, true }.CombinationsOfSize(arr.Length);
+            foreach(IEnumerable<bool> fs in flagSets)
+            {
+                yield return fs.Select((flag, index) => new { flag, index })
+                    .Where(x => x.flag)
+                    .Select(x => arr[x.index]);
+            }
+        }
+
+        /// <summary>
+        /// Yields in linear time all pairs of numbers that sum to n. 
+        /// </summary>
+        public static IEnumerable<Tuple<int, int>> PairsSumToN(this IEnumerable<int> source, int n)
+        {
+            var counts = new Dictionary<int, int>();
+            foreach(int i in source)
+            {
+                int j = n - i;
+                if(counts.ContainsKey(j))
                 {
-                    foreach(int index in indices)
-                    {
-                        if(!hs.Contains(index))
-                        {
-                            var addition = hs.Concat(new List<int> { index });
-                            yield return addition.Select(i => arr[i]);
-                            next.Add(new HashSet<int>(addition));
-                        }
-                    }
+                    for(int count = 0; count < counts[j]; ++count)
+                        yield return Tuple.Create(i, j);
                 }
+                counts[i] = counts.ContainsKey(i) ? counts[i] + 1 : 1;
             }
         }
 

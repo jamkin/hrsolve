@@ -65,6 +65,8 @@
     <Compile Include="ElectronicsShop\ElectronicsShop_Test.cs" />
     <Compile Include="GamingArray\GamingArray.cs" />
     <Compile Include="GamingArray\GamingArray_Test.cs" />
+    <Compile Include="HackerRankInAString\HackerRankInAString.cs" />
+    <Compile Include="HackerRankInAString\HackerRankInASring_Test.cs" />
     <Compile Include="MagicSquare\MagicSquare.cs" />
     <Compile Include="MagicSquare\MagicSquare_Test.cs" />
     <Compile Include="MigratoryBirds\MigratoryBirds.cs" />

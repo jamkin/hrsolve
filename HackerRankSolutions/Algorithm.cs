@@ -110,6 +110,10 @@ namespace HackerRankSolutions
             }
         }
 
+        /// <summary>
+        /// Gets all digits of a positive whole number.
+        /// Time-complexity: O(n) 
+        /// </summary>
         public static byte[] GetDigits(this ulong n)
         {
             List<byte> digits = new List<byte>();
@@ -122,6 +126,51 @@ namespace HackerRankSolutions
             byte[] arr = digits.ToArray();
             Array.Reverse(arr);
             return arr;
+        }
+
+        /// <summary>
+        /// Given a collection of collections, yields every collection that uses 1 element from each source collection.
+        /// Example: 
+        /// 
+        /// { { 1, 2 }, { 3 }, { 4, 5, 6 } }
+        /// -----> 
+        /// {
+        ///     { 1, 3, 4 },
+        ///     { 1, 3, 5 },
+        ///     { 1, 3, 6 },
+        ///     { 2, 3, 4 },
+        ///     { 2, 3, 5 },
+        ///     { 2, 3, 6 }
+        /// }
+        /// 
+        /// Time-complexity: O(N_0***N_m) where N_k is the number of elements in collection k
+        /// </summary>
+        public static IEnumerable<IEnumerable<T>> OneFromEach<T>(this IEnumerable<IEnumerable<T>> vals)
+        {
+            var arr = vals.ToArray();
+            if(arr.Length == 0)
+                yield break;
+            var accum = new Queue<IEnumerable<T>>();
+            foreach(T item in vals.First())
+                accum.Enqueue(new List<T>() { item });
+            for(int i = 1; i < arr.Length; ++i)
+            {
+                IEnumerable<T> inner = arr[i];
+                if(inner.Count() == 0)
+                {
+                    continue;
+                }
+                for(int j = 0, n = accum.Count(); j < n; ++j)
+                {
+                    IEnumerable<T> cur = accum.Dequeue();
+                    foreach(T item in inner)
+                    {
+                        accum.Enqueue(cur.Concat(new List<T> { item }));
+                    }
+                }
+            }
+            foreach(IEnumerable<T> collection in accum)
+                yield return collection;
         }
     }
 }

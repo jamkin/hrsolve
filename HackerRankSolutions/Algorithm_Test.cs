@@ -295,6 +295,53 @@ namespace HackerRankSolutions
             ExecuteNestedCollectionsEqual(actual, expected);
         }
 
+        [TestMethod]
+        public void OneFromEachTest()
+        {
+            int[][] input = { };
+            var actual = input.OneFromEach();
+            var expected = new int[][] { };
+            ExecuteNestedCollectionsEqual(actual, expected);
+
+            input = new int[][] { new int[] { } };
+            actual = input.OneFromEach();
+            ExecuteNestedCollectionsEqual(actual, expected);
+
+            input = new int[][] { new int[] { }, new int[] { } };
+            actual = input.OneFromEach();
+            ExecuteNestedCollectionsEqual(actual, expected);
+
+            input = new int[][] { new int[] { 1 }, new int[] { } };
+            actual = input.OneFromEach();
+            expected = new int[][] { new int[] { 1 } };
+            ExecuteNestedCollectionsEqual(actual, expected);
+
+            input = new int[][] { new int[] { 1, 2 }, new int[] { } };
+            actual = input.OneFromEach();
+            expected = new int[][] { new int[] { 1 }, new int[] { 2 } };
+            ExecuteNestedCollectionsEqual(actual, expected);
+
+            input = new int[][] { new int[] { 1, 2 }, new int[] { 3 } };
+            actual = input.OneFromEach();
+            expected = new int[][] { new int[] { 1, 3 }, new int[] { 2, 3 } };
+            ExecuteNestedCollectionsEqual(actual, expected);
+
+            input = new int[][] { new int[] { 1, 2 }, new int[] { 3, 4 } };
+            actual = input.OneFromEach();
+            expected = new int[][] { new int[] { 1, 3 }, new int[] { 1, 4 }, new int[] { 2, 3 }, new int[] { 2, 4 } };
+            ExecuteNestedCollectionsEqual(actual, expected);
+
+            input = new int[][] { new int[] { 1, 2 }, new int[] { 3, 4, 5 } };
+            actual = input.OneFromEach();
+            expected = new int[][] { new int[] { 1, 3 }, new int[] { 1, 4 }, new int[] { 1, 5 }, new int[] { 2, 3 }, new int[] { 2, 4 }, new int[] { 2, 5 } };
+            ExecuteNestedCollectionsEqual(actual, expected);
+
+            input = new int[][] { new int[] { 1, 2 }, new int[] { 3, 4, 5 }, new int[] { 6 } };
+            actual = input.OneFromEach();
+            expected = new int[][] { new int[] { 1, 3, 6 }, new int[] { 1, 4, 6 }, new int[] { 1, 5, 6 }, new int[] { 2, 3, 6 }, new int[] { 2, 4, 6 }, new int[] { 2, 5, 6 } };
+            ExecuteNestedCollectionsEqual(actual, expected);
+        }
+
         private static bool TupleEqualityIgnoreOrder<IEquatable>(Tuple<IEquatable, IEquatable> t1, Tuple<IEquatable, IEquatable> t2)
         {
             return t1.Item1.Equals(t2.Item1) && t1.Item2.Equals(t2.Item2)

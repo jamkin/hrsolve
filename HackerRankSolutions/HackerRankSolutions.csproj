@@ -61,6 +61,8 @@
     <Compile Include="CatsAndMouse\CatsAndMouse_Test.cs" />
     <Compile Include="CountingValleys\CountingValleys.cs" />
     <Compile Include="CountingValleys\CountingValleys_Test.cs" />
+    <Compile Include="CrosswordPuzzle\CrosswordPuzzle.cs" />
+    <Compile Include="CrosswordPuzzle\CrosswordPuzzle_Test.cs" />
     <Compile Include="ElectronicsShop\ElectronicsShop.cs" />
     <Compile Include="ElectronicsShop\ElectronicsShop_Test.cs" />
     <Compile Include="GamingArray\GamingArray.cs" />

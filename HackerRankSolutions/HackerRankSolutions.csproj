@@ -85,6 +85,8 @@
     <Compile Include="RunningMedian\RunningMedian.cs" />
     <Compile Include="RunningMedian\RunningMedian_Test.cs" />
     <Compile Include="Algorithm_Test.cs" />
+    <Compile Include="WeekOfCode32\Duplication\Duplication.cs" />
+    <Compile Include="WeekOfCode32\Duplication\Duplication_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

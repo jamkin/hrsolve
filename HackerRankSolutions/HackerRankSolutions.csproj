@@ -89,6 +89,8 @@
     <Compile Include="Algorithm_Test.cs" />
     <Compile Include="WeekOfCode32\Duplication\Duplication.cs" />
     <Compile Include="WeekOfCode32\Duplication\Duplication_Test.cs" />
+    <Compile Include="WeekOfCode32\FightTheMonsters\FightTheMonsters.cs" />
+    <Compile Include="WeekOfCode32\FightTheMonsters\FightTheMonsters_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

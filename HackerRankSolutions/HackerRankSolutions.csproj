@@ -91,6 +91,8 @@
     <Compile Include="WeekOfCode32\Duplication\Duplication_Test.cs" />
     <Compile Include="WeekOfCode32\FightTheMonsters\FightTheMonsters.cs" />
     <Compile Include="WeekOfCode32\FightTheMonsters\FightTheMonsters_Test.cs" />
+    <Compile Include="WeightedUniformStrings\WeightedUniformStrings_Test.cs" />
+    <Compile Include="WeightedUniformStrings\WeightedUniformStrings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

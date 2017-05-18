@@ -8,70 +8,68 @@ namespace HackerRankSolutions.WeekOfCode32.CircularWalk
 {
     public static class CircularWalk
     {
-        public static int Solve(int n, int s, int t, int R0, int g, int seed, int p)
+        public static long Solve(long n, long s, long t, long R0, long g, long seed, long p)
         {
-            int[] R = GetR(n, R0, g, seed, p);
-            int d;
-            return (d = ShortestDistance(R, s, t)) < int.MaxValue ? d : -1;
+            long[] R = GetR(n, R0, g, seed, p);
+            long d;
+            return ((d = ShortestDistance(R, s, t)) < long.MaxValue ? d : -1);
         }
 
 
-        private static int ShortestDistance(int[] R, int start, int end)
+        private static long ShortestDistance(long[] R, long start, long end)
         {
-            //int[] d = Enumerable.Repeat(int.MaxValue, R.Length).ToArray();
-            int[] d = new int[R.Length];
-            for(int i = 0; i < d.Length; ++i)
-                d[i] = int.MaxValue;
+            long[] d = new long[R.Length];
+            for(long i = 0; i < (long)d.Length; ++i)
+                d[i] = long.MaxValue;
             d[start] = 0;
-            Queue<int> q = new Queue<int>();
+            Queue<long> q = new Queue<long>();
             q.Enqueue(start);
-            HashSet<int> visited = new HashSet<int>();
+            HashSet<long> visited = new HashSet<long>();
             while(q.Count > 0)
             {
-                int cur = q.Dequeue();
+                long cur = q.Dequeue();
                 if(cur == end)
                 {
                     return d[cur];
                 }
-                IEnumerable<int> nexts = GetNexts(R, cur);
-                foreach(int child in nexts)
+                IEnumerable<long> nexts = GetNexts(R, cur);
+                foreach(long child in nexts)
                 {
-                    int distFromCur = d[cur] + 1;
+                    long distFromCur = d[cur] + 1;
                     if(distFromCur < d[child])
                     {
                         d[child] = distFromCur;
-
                     }
                     if(!visited.Contains(child))
                     {
                         q.Enqueue(child);
                     }
+                    visited.Add(child);
                 }
-                visited.Add(cur);
             }
-            return int.MaxValue;
+            return long.MaxValue;
         }
 
-        private static int[] GetR(int n, int R0, int g, int seed, int p)
+        private static long[] GetR(long n, long R0, long g, long seed, long p)
         {
-            int[] R = new int[n];
+            long[] R = new long[n];
             R[0] = R0;
-            for(int i = 1; i < R.Length; ++i)
+            for(long i = 1; i < (long)R.Length; ++i)
             {
                 R[i] = (R[i - 1] * g + seed) % p;
             }
             return R;
         }
 
-        private static IEnumerable<int> GetNexts(int[] R, int i)
+        private static IEnumerable<long> GetNexts(long[] R, long i)
         {
-            for(int j = 1; j <= R[i]; ++j)
+            for(long j = 1; j <= R[i]; ++j)
             {
-                int p1 = (i + j) % R.Length;
+                long p1 = (i + j) % (long)R.Length;
                 yield return p1;
 
-                int x;
-                int p2 = (x = (i - j) % R.Length) >= 0 ? x : R.Length - (R.Length - x) % R.Length;
+                long x;
+                long p2 = (x = (i - j) % (long)R.Length) >= 0 ? x : (long)R.Length - ((long)R.Length - x) % (long)R.Length;
                 yield return p2;
             }
         }

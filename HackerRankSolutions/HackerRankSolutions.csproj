@@ -73,6 +73,7 @@
     <Compile Include="HackerRankInAString\HackerRankInASring_Test.cs" />
     <Compile Include="MagicSquare\MagicSquare.cs" />
     <Compile Include="MagicSquare\MagicSquare_Test.cs" />
+    <Compile Include="MarcsCakewalk\MarcsCakewalk.cs" />
     <Compile Include="MigratoryBirds\MigratoryBirds.cs" />
     <Compile Include="MigratoryBirds\MigratoryBirds_Test.cs" />
     <Compile Include="MinimumAbsoluteDifference\MinimumAbsoluteDifference.cs" />
@@ -89,6 +90,8 @@
     <Compile Include="RunningMedian\RunningMedian.cs" />
     <Compile Include="RunningMedian\RunningMedian_Test.cs" />
     <Compile Include="Algorithm_Test.cs" />
+    <Compile Include="SherlockAndCost\SherlockAndCost.cs" />
+    <Compile Include="SherlockAndCost\SherlockAndCost_Test.cs" />
     <Compile Include="WeekOfCode32\CircularWalk\CircularWalk.cs" />
     <Compile Include="WeekOfCode32\CircularWalk\CircularWalk_Test.cs" />
     <Compile Include="WeekOfCode32\Duplication\Duplication.cs" />

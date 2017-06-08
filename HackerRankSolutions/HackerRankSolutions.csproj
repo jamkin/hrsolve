@@ -48,6 +48,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abbreviation\Abbreviation.cs" />
+    <Compile Include="Abbreviation\Abbreviation_Test.cs" />
     <Compile Include="Algorithm.cs" />
     <Compile Include="BirthdayCakeCandles\BirthdayCakeCandles.cs" />
     <Compile Include="BirthdayCakeCandles\BirthdayCakeCandles_Test.cs" />

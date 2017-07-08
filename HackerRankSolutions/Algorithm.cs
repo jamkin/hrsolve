@@ -12,6 +12,26 @@ namespace HackerRankSolutions
     public static class Algorithm
     {
         /// <summary>
+        /// Yields all contiguous subarrays of a given array. 
+        /// Ex. { 1, 5, 2 } -> { {1}, {5}, {2}, {1, 5}, {5, 2}, {1, 5, 2} }
+        /// </summary>
+        public static IEnumerable<T[]> ContiguousSubarrays<T>(this T[] source)
+        {
+            for(int len = 1; len <= source.Length; ++len)
+            {
+                for(int i = 0, j = source.Length - len + 1; i < j; ++i)
+                {
+                    T[] result = new T[len];
+                    for(int k = 0; k < len; ++k)
+                    {
+                        result[k] = source[k + i];
+                    }
+                    yield return result;
+                }
+            }
+        }
+
+        /// <summary>
         /// Iterative algorithm to yield all combinations of a specified size from a collection source. For example, if
         /// source = { 1, 2, 3, 4 }
         /// and 

@@ -342,6 +342,30 @@ namespace HackerRankSolutions
             ExecuteNestedCollectionsEqual(actual, expected);
         }
 
+        [TestMethod]
+        public void ContiguousSubarrays()
+        {
+            int[] empty = new int[] { };
+            var actual = empty.ContiguousSubarrays();
+            var expected = new List<int[]>() { };
+            ExecuteNestedCollectionsEqual(actual, expected);
+
+            var singleElement = new int[] { 3 };
+            actual = singleElement.ContiguousSubarrays();
+            expected = new List<int[]>() { new int[] { 3 } };
+            ExecuteNestedCollectionsEqual(actual, expected);
+
+            var twoElements = new int[] { 1, 2 };
+            actual = twoElements.ContiguousSubarrays();
+            expected = new List<int[]>() { new int[] { 1, 2 }, new int[] { 1 }, new int[] { 2 } };
+            ExecuteNestedCollectionsEqual(actual, expected);
+
+            var threeElements = new int[] { 8, 6, 1 };
+            actual = threeElements.ContiguousSubarrays();
+            expected = new List<int[]>() { new int[] { 8, 6, 1 }, new int[] { 8, 6 }, new int[] { 6, 1 }, new int[] { 8 }, new int[] { 6 }, new int[] { 1 } };
+            ExecuteNestedCollectionsEqual(actual, expected);
+        }
+
         private static bool TupleEqualityIgnoreOrder<IEquatable>(Tuple<IEquatable, IEquatable> t1, Tuple<IEquatable, IEquatable> t2)
         {
             return t1.Item1.Equals(t2.Item1) && t1.Item2.Equals(t2.Item2)

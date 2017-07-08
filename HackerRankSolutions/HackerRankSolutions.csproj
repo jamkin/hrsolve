@@ -92,6 +92,8 @@
     <Compile Include="RunningMedian\RunningMedian.cs" />
     <Compile Include="RunningMedian\RunningMedian_Test.cs" />
     <Compile Include="Algorithm_Test.cs" />
+    <Compile Include="SamAndSubstrings\SamAndSubstrings.cs" />
+    <Compile Include="SamAndSubstrings\SamAndSubstrings_Test.cs" />
     <Compile Include="SherlockAndCost\SherlockAndCost.cs" />
     <Compile Include="SherlockAndCost\SherlockAndCost_Test.cs" />
     <Compile Include="WeekOfCode32\CircularWalk\CircularWalk.cs" />

@@ -87,6 +87,8 @@
     <Compile Include="PowerSum\PowerSum.cs" />
     <Compile Include="PowerSum\PowerSum_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueensAttackII\QueensAttackII.cs" />
+    <Compile Include="QueensAttackII\QueensAttackII_Test.cs" />
     <Compile Include="RecursiveDigitSum\RecursiveDigitSum.cs" />
     <Compile Include="RecursiveDigitSum\RecursiveDigitSum_Test.cs" />
     <Compile Include="RunningMedian\RunningMedian.cs" />

@@ -96,6 +96,8 @@
     <Compile Include="Algorithm_Test.cs" />
     <Compile Include="SamAndSubstrings\SamAndSubstrings.cs" />
     <Compile Include="SamAndSubstrings\SamAndSubstrings_Test.cs" />
+    <Compile Include="SeparateTheNumbers\SeparateTheNumbers.cs" />
+    <Compile Include="SeparateTheNumbers\SeparateTheNumbers_Test.cs" />
     <Compile Include="SherlockAndCost\SherlockAndCost.cs" />
     <Compile Include="SherlockAndCost\SherlockAndCost_Test.cs" />
     <Compile Include="WeekOfCode32\CircularWalk\CircularWalk.cs" />

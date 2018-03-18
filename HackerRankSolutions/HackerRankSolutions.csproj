@@ -63,6 +63,8 @@
     <Compile Include="CatsAndMouse\CatsAndMouse_Test.cs" />
     <Compile Include="ClimbingTheLeaderboard\ClimbingTheLeaderboard.cs" />
     <Compile Include="ClimbingTheLeaderboard\ClimbingTheLeaderboard_Test.cs" />
+    <Compile Include="CommonChild\CommonChild.cs" />
+    <Compile Include="CommonChild\CommonChild_Test.cs" />
     <Compile Include="CountingValleys\CountingValleys.cs" />
     <Compile Include="CountingValleys\CountingValleys_Test.cs" />
     <Compile Include="CrosswordPuzzle\CrosswordPuzzle.cs" />
